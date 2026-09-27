@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran I-Barber</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .qr-box {
+            background: #fff;
+            border: 2px solid #e2007a;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        /* Nota: Ganti link gambar QR di bawah dengan link QR anda nanti */
+        .qr-img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+        }
+        .btn {
+            background-color: #000;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .btn:active {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="paymentView">
+        <h2>Pembayaran Deposit</h2>
+        <p>Sila imbas kod DuitNow QR di bawah untuk membuat bayaran deposit 50%.</p>
+        
+        <div class="qr-box">
+            <!-- Ganti link di bawah dengan URL gambar QR anda -->
+            <img src="https://i.ibb.co/30739741/qr-duitnow.jpg" alt="DuitNow QR" class="qr-img">
+            <p style="margin-top: 10px; font-weight: bold; color: #e2007a;">MALAYSIA NATIONAL QR</p>
+        </div>
+
+        <p style="font-size: 14px; color: #666;">Selepas selesai membuat bayaran, sila klik butang di bawah.</p>
+        
+        <button class="btn" onclick="showSuccess()">Saya Dah Bayar</button>
+    </div>
+
+    <div class="container" id="successView" style="display: none;">
+        <h2 style="color: #28a745;">Bayaran Berjaya!</h2>
+        <p>Terima kasih. Tempahan anda telah direkodkan.</p>
+        <p style="font-size: 14px; color: #666;">Anda boleh tutup halaman ini dan kembali ke aplikasi I-Barber.</p>
+    </div>
+
+    <script>
+        function showSuccess() {
+            document.getElementById('paymentView').style.display = 'none';
+            document.getElementById('successView').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
